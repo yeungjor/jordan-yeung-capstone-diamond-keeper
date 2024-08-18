@@ -12,10 +12,15 @@ Most, if not all, recreational softball leagues use pen and paper to track game 
 
 ### User Profile
 
-Softball teams/coaches:
+Coach/admin:
 
 - track game stats
 - track individual player's stats to help create better strategies
+- create/add players
+
+Regular user/player (no login required):
+
+- view game stats and player details
 
 ### Features
 
@@ -24,7 +29,6 @@ List the functionality that your app will include. These can be written as user 
 - Create and login to an account
 - input game stats
 - add and remove players
-- create batting line-up
 
 - view game history
 
@@ -48,6 +52,8 @@ List technologies that will be used in your app, including any libraries to save
 ### APIs
 
 List any external sources of data that will be used in your app.
+
+- will be using self created data migrations and seeds such as examples listed in endpoints section
 
 ### Sitemap
 
@@ -73,26 +79,37 @@ Provide visuals of your app's screens. You can use tools like Figma or pictures 
 
 Describe your data and the relationships between them. You can show this visually using diagrams, or write it out.
 
-User:
+Coach:
 
-- username/id?
+- id
+- username
 - email
 - password
+- team
 
 Player:
 
 - id
+- team_id
+- game_id
 - name
 - jersey number
 - gender
 - bats
 - throws
 
+Team:
+
+- id
+- user_id
+- team name
+
 Game:
 
 - id
 - date
-- versus
+- home team
+- away team
 - runs for
 - runs against
 
@@ -108,7 +125,8 @@ GET /games
 {
 "id": 1,
 "date": "14-Aug-2024",
-"versus": "opposing team name",
+"home team": "Sharks",
+"away team": "Jays",
 "runs for": 11,
 "runs against": 4,
 }
@@ -122,7 +140,8 @@ POST /games/id
 {
 "id": 1,
 "date": "14-Aug-2024",
-"versus": "opposing team name",
+"home team": "Sharks",
+"away team": "Jays",
 "runs for": 11,
 "runs against": 4,
 }
@@ -137,6 +156,7 @@ GET /players
 "name": "Jordan Yeung",
 "gender": "male",
 "jersey": "#5",
+"team": "Jays",
 "bats": "left",
 "throws": "right",
 }
@@ -178,20 +198,25 @@ Does your project include any login or user profile functionality? If so, descri
 
 Scope your project as a sprint. Break down the tasks that will need to be completed and map out timeframes for implementation. Think about what you can reasonably complete before the due date. The more detail you provide, the easier it will be to build.
 
-- Create server
+Week 1:
+
+- Create migrations and seeds with 3 sample game data and 11 sample player data
+
+- Create server side
   - express routing
-- Create client
+
+Week 2:
+
+- Create client side
   - boilerplate, components
-- Create migrations
-
-- Create seed with 3 sample game data and 11 sample player data
-
--
+  - link server and client
 
 ## Nice-to-haves
 
 Your project will be marked based on what you committed to in the above document. Under nice-to-haves, you can list any additional features you may complete if you have extra time, or after finishing.
 
+- AI - time dependant
+- create batting line-up
 - authentication
 - input player stats such as at bats, hits, walks, slugging, averages, totals etc.
 - view player stats for specific game/ total season/ total career
