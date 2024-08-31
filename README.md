@@ -1,224 +1,70 @@
-# Project Title
+# Getting Started with Create React App
 
-Diamond Keeper
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Overview
+## Available Scripts
 
-This app is to help track softball game stats as well as player stats across games and seasons.
+In the project directory, you can run:
 
-### Problem
+### `npm start`
 
-Most, if not all, recreational softball leagues use pen and paper to track game data. Using paper to track data is time consuming and prone to errors. It is hard to keep everything organized, and finding past records can be a hassle. Tracking individual player performances is difficult, and sharing stats with the team is a lot of work as custom reports takes a lot of extra time and effort. Environmentally damaging as thousands of books are printed every year.
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-### User Profile
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-Coach/admin:
+### `npm test`
 
-- track game stats
-- track individual player's stats to help create better strategies
-- create/add players
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-Regular user/player (no login required):
+### `npm run build`
 
-- view game stats and player details
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-### Features
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-List the functionality that your app will include. These can be written as user stories or descriptions with related details. Do not describe _how_ these features are implemented, only _what_ needs to be implemented.
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-- Create and login to an account
-- input game stats
-- add and remove players
+### `npm run eject`
 
-- view game history
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-## Implementation
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-### Tech Stack
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-List technologies that will be used in your app, including any libraries to save time or provide more functionality. Be sure to research any potential limitations.
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-- React
-- MySQL
-- Express
-- Client libraries:
-  - react
-  - react-router
-  - axios
-- Server libraries:
-  - knex
-  - express
+## Learn More
 
-### APIs
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-List any external sources of data that will be used in your app.
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-- will be using self created data migrations and seeds such as examples listed in endpoints section
+### Code Splitting
 
-### Sitemap
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-List the pages of your app with brief descriptions. You can show this visually, or write it out.
+### Analyzing the Bundle Size
 
-- Registration/login
-- Home page
-- Game page
-- Team page
-- Create Player page
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Mockups
+### Making a Progressive Web App
 
-Provide visuals of your app's screens. You can use tools like Figma or pictures of hand-drawn sketches.
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-- Attached .png files
-  - Home Page
-  - Game Page
-  - Team Page
-  - Create Player Page
+### Advanced Configuration
 
-### Data
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-Describe your data and the relationships between them. You can show this visually using diagrams, or write it out.
+### Deployment
 
-Coach:
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-- id
-- username
-- email
-- password
-- team
+### `npm run build` fails to minify
 
-Player:
-
-- id
-- team_id
-- game_id
-- name
-- jersey number
-- gender
-- bats
-- throws
-
-Team:
-
-- id
-- user_id
-- team name
-
-Game:
-
-- id
-- date
-- home team
-- away team
-- runs for
-- runs against
-
-### Endpoints
-
-List endpoints that your server will implement, including HTTP methods, parameters, and example responses.
-
-GET /games
-
-- list of game history
-
-[
-{
-"id": 1,
-"date": "14-Aug-2024",
-"home team": "Sharks",
-"away team": "Jays",
-"runs for": 11,
-"runs against": 4,
-}
-...
-]
-
-POST /games/id
-
-- input/add game data
-
-{
-"id": 1,
-"date": "14-Aug-2024",
-"home team": "Sharks",
-"away team": "Jays",
-"runs for": 11,
-"runs against": 4,
-}
-
-GET /players
-
-- list of players
-
-[
-{
-"id": 1,
-"name": "Jordan Yeung",
-"gender": "male",
-"jersey": "#5",
-"team": "Jays",
-"bats": "left",
-"throws": "right",
-}
-...
-]
-
-GET /players/id
-
-- get individual player stats
-
-{
-"id": 1,
-"name": "Jordan Yeung",
-"gender": "male",
-"jersey": "#5",
-"bats": "left",
-"throws": "right",
-
-}
-
-POST /players/id
-
-- create new player
-
-{
-"id": 1,
-"name": "Jordan Yeung",
-"gender": "male",
-"jersey": "#5",
-"bats": "left",
-"throws": "right"
-}
-
-### Auth
-
-Does your project include any login or user profile functionality? If so, describe how authentication/authorization will be implemented.
-
-## Roadmap
-
-Scope your project as a sprint. Break down the tasks that will need to be completed and map out timeframes for implementation. Think about what you can reasonably complete before the due date. The more detail you provide, the easier it will be to build.
-
-Week 1:
-
-- Create migrations and seeds with 3 sample game data and 11 sample player data
-
-- Create server side
-  - express routing
-
-Week 2:
-
-- Create client side
-  - boilerplate, components
-  - link server and client
-
-## Nice-to-haves
-
-Your project will be marked based on what you committed to in the above document. Under nice-to-haves, you can list any additional features you may complete if you have extra time, or after finishing.
-
-- AI - time dependant
-- create batting line-up
-- authentication
-- input player stats such as at bats, hits, walks, slugging, averages, totals etc.
-- view player stats for specific game/ total season/ total career
-- view team stats for specific game/ total season/ total career
-- add more functionality to better track game stats
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
