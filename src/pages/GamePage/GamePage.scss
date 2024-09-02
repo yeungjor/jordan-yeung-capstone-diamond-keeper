@@ -1,0 +1,26 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/globals" as *;
+
+.games {
+  padding: 1rem;
+
+  &__header {
+    font-size: 24px;
+    display: flex;
+  }
+  &__table {
+    font-size: 13px;
+    padding: 1rem;
+  }
+  &__table-column-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__table-column {
+    width: 20%;
+    &--team {
+      width: 25%;
+    }
+  }
+}

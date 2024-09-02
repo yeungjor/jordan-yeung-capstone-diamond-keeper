@@ -1,3 +1,33 @@
-header {
-  background-color: blue;
+.header {
+  padding: 0 1rem;
+
+  &__logo {
+    height: 8rem;
+    padding: 1rem;
+  }
+
+  &__list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+    height: 3rem;
+  }
+
+  &__list-item {
+    width: 50%;
+  }
+
+  &__list-divider {
+    background-color: grey;
+    height: 3rem;
+    width: 1px;
+    border: 0;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: black;
+  }
 }

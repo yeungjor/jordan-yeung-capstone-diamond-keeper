@@ -1,17 +1,32 @@
 import "./Header.scss";
 import logo from "../../assets/images/diamond-keeper.png";
 
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function Header() {
-  const location = useLocation();
-
   return (
     <>
-      <header>
-        <div className="header__logo">
-          <img src={logo}></img>
+      <header className="header">
+        <div>
+          <NavLink to="/">
+            <img className="header__logo" src={logo} alt="logo" />
+          </NavLink>
         </div>
+        <nav className="header__nav">
+          <ul className="header__list">
+            <li className="header__list-item">
+              <NavLink to="/games" className="header__link">
+                Games
+              </NavLink>
+            </li>
+            <hr className="header__list-divider" />
+            <li className="header__list-item">
+              <NavLink to="/team" className="header__link">
+                Team
+              </NavLink>
+            </li>
+          </ul>
+        </nav>
       </header>
     </>
   );

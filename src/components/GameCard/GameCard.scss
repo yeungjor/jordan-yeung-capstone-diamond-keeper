@@ -1,0 +1,15 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/globals" as *;
+
+.games-card {
+  display: flex;
+  justify-content: space-between;
+
+  &-column {
+    width: 20%;
+    &--team {
+      width: 25%;
+    }
+  }
+}
