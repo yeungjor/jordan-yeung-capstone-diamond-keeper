@@ -74,13 +74,13 @@ function HomePage() {
   return (
     <>
       <div className="home">
-        <h1>Game Score</h1>
+        <h1 className="home__header">Game Score</h1>
         <input
           type="date"
           value={gameDate}
           onChange={(e) => setGameDate(e.target.value)}
         />
-        <div>
+        <div className="scoreboard">
           <div>
             <select
               value={awayTeam}
@@ -103,7 +103,7 @@ function HomePage() {
                 })}
             </select>
             <div>
-              <h2>{totalAwayScore}</h2>
+              <h2 className="scoreboard__score">{totalAwayScore}</h2>
               <h3>Away</h3>
             </div>
           </div>
@@ -127,7 +127,7 @@ function HomePage() {
             </select>
 
             <div>
-              <h2>{totalHomeScore}</h2>
+              <h2 className="scoreboard__score">{totalHomeScore}</h2>
               <h3>Home</h3>
             </div>
           </div>
@@ -148,10 +148,14 @@ function HomePage() {
             />
           </div>
         ))}
-
-        <button onClick={handleAddInning}>Add Inning</button>
-
-        <button onClick={handleSubmitGame}>Submit Game</button>
+        <div className="btn-container">
+          <button className="btn btn__add-inning" onClick={handleAddInning}>
+            Add Inning
+          </button>
+          <button className="btn btn__submit" onClick={handleSubmitGame}>
+            Submit Game
+          </button>
+        </div>
       </div>
     </>
   );

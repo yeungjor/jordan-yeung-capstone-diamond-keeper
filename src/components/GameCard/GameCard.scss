@@ -5,11 +5,20 @@
 .games-card {
   display: flex;
   justify-content: space-between;
+  padding: 0.25rem 0;
 
   &-column {
-    width: 20%;
-    &--team {
+    &--date {
       width: 25%;
+      text-align: left;
+    }
+    &--team {
+      width: 20%;
+      text-align: left;
+    }
+    &--score {
+      width: 3rem;
+      text-align: left;
     }
   }
 }
