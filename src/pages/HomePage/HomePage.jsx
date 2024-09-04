@@ -1,6 +1,7 @@
 import "./HomePage.scss";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import InningCard from "../../components/InningCard/InningCard";
 
 function HomePage() {
   const URL = process.env.REACT_APP_API_URL || "http://localhost:8080";
@@ -34,7 +35,7 @@ function HomePage() {
 
   const handleScoreChange = (index, team, value) => {
     const newScores = [...inningScores];
-    newScores[index][team] = parseInt(value, 10);
+    newScores[index][team] = Math.max(0, parseInt(value, 10));
     setInningScores(newScores);
     calculateTotalScores(newScores);
   };
@@ -85,16 +86,13 @@ function HomePage() {
             <select
               value={awayTeam}
               onChange={(e) => {
-                console.log(e.target.value);
                 return setAwayTeam(e.target.value);
               }}
             >
               <option value="">Select Away Team</option>
               {teams
-                .filter((team) => team.id !== homeTeam)
+                .filter((team) => team.id !== parseInt(homeTeam))
                 .map((team) => {
-                  console.log(homeTeam);
-                  // console.log(team.id);
                   return (
                     <option key={team.id} value={team.id}>
                       {team.team_name}
@@ -114,16 +112,12 @@ function HomePage() {
             >
               <option value="">Select Home Team</option>
               {teams
-                .filter((team) => team.id !== awayTeam)
-                .map((team) => {
-                  // console.log(team.id);
-                  console.log(awayTeam);
-                  return (
-                    <option key={team.id} value={team.id}>
-                      {team.team_name}
-                    </option>
-                  );
-                })}
+                .filter((team) => team.id !== parseInt(awayTeam))
+                .map((team) => (
+                  <option key={team.id} value={team.id}>
+                    {team.team_name}
+                  </option>
+                ))}
             </select>
 
             <div>
@@ -132,22 +126,17 @@ function HomePage() {
             </div>
           </div>
         </div>
-        {inningScores.map((inning, index) => (
-          <div className="inning__container" key={index}>
-            <input
-              type="number"
-              value={inning.away}
-              onChange={(e) => handleScoreChange(index, "away", e.target.value)}
-              placeholder="Away Team Score"
+        <div>
+          <p className="inning-header">Innings</p>
+          {inningScores.map((inning, index) => (
+            <InningCard
+              key={index}
+              inning={inning}
+              index={index}
+              handleScoreChange={handleScoreChange}
             />
-            <input
-              type="number"
-              value={inning.home}
-              onChange={(e) => handleScoreChange(index, "home", e.target.value)}
-              placeholder="Home Team Score"
-            />
-          </div>
-        ))}
+          ))}
+        </div>
         <div className="btn-container">
           <button className="btn btn__add-inning" onClick={handleAddInning}>
             Add Inning

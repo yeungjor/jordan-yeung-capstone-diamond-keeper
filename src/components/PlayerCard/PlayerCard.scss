@@ -1,0 +1,21 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/globals" as *;
+
+.player-card {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.25rem 0;
+  font-size: 13px;
+
+  &__name {
+    width: 50%;
+    text-align: left;
+  }
+  &__gender,
+  &__bats,
+  &__throws {
+    width: 15%;
+    text-align: left;
+  }
+}
