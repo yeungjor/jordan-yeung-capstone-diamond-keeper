@@ -4,11 +4,11 @@ Diamond Keeper
 
 ## Overview
 
-This app is to help track softball game stats as well as player stats across games and seasons.
+This app is a simple yet powerful platform to track softball game stats as well as player stats across games and seasons. Most, if not all, small league and recreational softball leagues use pen and paper to track game data.
 
 ### Problem
 
-Most, if not all, recreational softball leagues use pen and paper to track game data. Using paper to track data is time consuming and prone to errors. It is hard to keep everything organized, and finding past records can be a hassle. Tracking individual player performances is difficult, and sharing stats with the team is a lot of work as custom reports takes a lot of extra time and effort. Environmentally damaging as thousands of books are printed every year.
+Teams often record their games manually which can be time consuming, prone to errors and is difficult to analyze later on. Tracking and sharing stats with the team is a lot of work as custom reports takes a lot of extra time and effort. Also it is environmentally damaging as thousands of books are printed every year. Goal of this app is to streamline the entire process. Teams can now enter game details, track scores, and manage player profiles in a centralized platform.
 
 ### User Profile
 
@@ -29,7 +29,6 @@ List the functionality that your app will include. These can be written as user 
 - Create and login to an account
 - input game stats
 - add and remove players
-
 - view game history
 
 ## Implementation
@@ -205,7 +204,7 @@ Scope your project as a sprint. Break down the tasks that will need to be comple
 
 Week 1:
 
-- Create migrations and seeds with 3 sample game data and 11 sample player data
+- Create migrations and seeds with sample game data and player data
 
 - Create server side
   - express routing
@@ -221,9 +220,8 @@ Week 2:
 Your project will be marked based on what you committed to in the above document. Under nice-to-haves, you can list any additional features you may complete if you have extra time, or after finishing.
 
 - AI - time dependant
+- authentication and authorization
 - create batting line-up
-- authentication
-- input player stats such as at bats, hits, walks, slugging, averages, totals etc.
+- input player stats such as at-bats, hits, walks, slugging, averages etc.
 - view player stats for specific game/ total season/ total career
 - view team stats for specific game/ total season/ total career
-- add more functionality to better track game stats

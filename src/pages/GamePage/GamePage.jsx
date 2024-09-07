@@ -14,7 +14,6 @@ function GamePage() {
     const fetchGames = async () => {
       try {
         const response = await axios.get(`${URL}/games`);
-        console.log(response.data);
         if (response.data) {
           setGames(response.data);
         } else {
@@ -32,7 +31,6 @@ function GamePage() {
     async function fetchTeams() {
       try {
         const response = await axios.get(`${URL}/teams`);
-        console.log(response.data.teams);
         if (response.data.teams) {
           setTeams(response.data.teams);
         } else {
@@ -61,6 +59,7 @@ function GamePage() {
         <h1 className="games__header">Game History</h1>
         <div className="games__filter">
           <select
+            className="games__team-select"
             value={selectedTeam}
             onChange={(e) => setSelectedTeam(e.target.value)}
           >

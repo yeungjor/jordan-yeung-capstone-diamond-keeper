@@ -30,30 +30,39 @@ function PlayerModal({ isOpen, onClose, teams, onCreatePlayer }) {
   return (
     <div className="modal">
       <div className="modal__container">
-        <h2>Create Player</h2>
+        <h2 className="modal__header">Create Player</h2>
         <form onSubmit={handleSubmit}>
-          <div className="modal__input modal__input--name">
-            <label>Name</label>
+          <div className="modal__input modal__input-container">
+            <label className="modal__input-label modal__input-label--name">
+              Name
+            </label>
             <input
+              className="modal__input--name"
               type="text"
               value={playerName}
               onChange={(e) => setPlayerName(e.target.value)}
               required
             />
           </div>
-          <div className="modal__input modal__input--jersey">
-            <label>Jersey Number</label>
+          <div className="modal__input modal__input-container">
+            <label className="modal__input-label modal__input-label--jersey">
+              Jersey Number
+            </label>
             <input
+              className="modal__input--jersey"
               type="text"
               value={jerseyNumber}
               onChange={(e) => setJerseyNumber(e.target.value)}
+              min="0"
+              max="99"
               required
             />
           </div>
-          <div className="modal__input modal__input--gender">
-            <label>Gender</label>
+          <div className="modal__input modal__input-container">
+            <label className="modal__input-label">Gender</label>
             <div>
               <input
+                className="modal__input-field--radio"
                 type="radio"
                 value="M"
                 checked={gender === "M"}
@@ -61,6 +70,7 @@ function PlayerModal({ isOpen, onClose, teams, onCreatePlayer }) {
               />
               Male
               <input
+                className="modal__input-field--radio"
                 type="radio"
                 value="F"
                 checked={gender === "F"}
@@ -69,10 +79,11 @@ function PlayerModal({ isOpen, onClose, teams, onCreatePlayer }) {
               Female
             </div>
           </div>
-          <div className="modal__input modal__input--bats">
-            <label>Bats</label>
+          <div className="modal__input modal__input-container">
+            <label className="modal__input-label">Bats</label>
             <div>
               <input
+                className="modal__input-field--radio"
                 type="radio"
                 value="Left"
                 checked={bats === "Left"}
@@ -80,6 +91,7 @@ function PlayerModal({ isOpen, onClose, teams, onCreatePlayer }) {
               />
               Left
               <input
+                className="modal__input-field--radio"
                 type="radio"
                 value="Right"
                 checked={bats === "Right"}
@@ -87,6 +99,7 @@ function PlayerModal({ isOpen, onClose, teams, onCreatePlayer }) {
               />
               Right
               <input
+                className="modal__input-field--radio"
                 type="radio"
                 value="Switch"
                 checked={bats === "Switch"}
@@ -95,10 +108,11 @@ function PlayerModal({ isOpen, onClose, teams, onCreatePlayer }) {
               Switch
             </div>
           </div>
-          <div className="modal__input modal__input--throws">
-            <label>Throws</label>
+          <div className="modal__input modal__input-container">
+            <label className="modal__input-label">Throws</label>
             <div>
               <input
+                className="modal__input-field--radio"
                 type="radio"
                 value="Left"
                 checked={throws === "Left"}
@@ -106,6 +120,7 @@ function PlayerModal({ isOpen, onClose, teams, onCreatePlayer }) {
               />
               Left
               <input
+                className="modal__input-field--radio"
                 type="radio"
                 value="Right"
                 checked={throws === "Right"}
@@ -113,6 +128,7 @@ function PlayerModal({ isOpen, onClose, teams, onCreatePlayer }) {
               />
               Right
               <input
+                className="modal__input-field--radio"
                 type="radio"
                 value="Switch"
                 checked={throws === "Switch"}
@@ -121,9 +137,12 @@ function PlayerModal({ isOpen, onClose, teams, onCreatePlayer }) {
               Switch
             </div>
           </div>
-          <div className="modal__input modal__input--team">
-            <label>Team</label>
+          <div className="modal__input modal__input-container">
+            <label className="modal__input-label modal__input-label--team">
+              Team
+            </label>
             <select
+              className="modal__select"
               value={team}
               onChange={(e) => setTeam(e.target.value)}
               required
@@ -137,9 +156,17 @@ function PlayerModal({ isOpen, onClose, teams, onCreatePlayer }) {
             </select>
           </div>
           <div className="modal__button-container">
-            <button type="submit">Create</button>
-            <button type="button" onClick={onClose}>
+            <button
+              className="modal__button modal__button--cancel"
+              onClick={onClose}
+            >
               Cancel
+            </button>
+            <button
+              className="modal__button modal__button--create"
+              type="submit"
+            >
+              Create
             </button>
           </div>
         </form>

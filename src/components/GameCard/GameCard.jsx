@@ -1,11 +1,9 @@
 import "./GameCard.scss";
+import { format } from "date-fns";
 
 function GameCard({ date, homeTeam, awayTeam, homeTeamRuns, awayTeamRuns }) {
-  const formattedDate = new Date(date).toLocaleDateString("en-GB", {
-    day: "2-digit",
-    month: "short",
-    year: "numeric",
-  });
+  const formattedDate = format(new Date(date), "dd-MMM-yyyy");
+
   return (
     <>
       <div className="games-card">

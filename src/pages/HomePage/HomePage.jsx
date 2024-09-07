@@ -64,6 +64,8 @@ function HomePage() {
       });
 
       alert("Game created successfully");
+
+      window.location.reload();
     } catch (error) {
       console.error("Error submitting game", error.response.data);
       alert(
@@ -75,15 +77,21 @@ function HomePage() {
   return (
     <>
       <div className="home">
-        <h1 className="home__header">Game Score</h1>
+        <h1 className="home__header">Scoreboard</h1>
         <input
+          className="home__date"
           type="date"
           value={gameDate}
           onChange={(e) => setGameDate(e.target.value)}
         />
         <div className="scoreboard">
           <div>
+            <div>
+              <h2 className="scoreboard__score">{totalAwayScore}</h2>
+              <h3>Away</h3>
+            </div>
             <select
+              className="scoreboard__select"
               value={awayTeam}
               onChange={(e) => {
                 return setAwayTeam(e.target.value);
@@ -100,13 +108,14 @@ function HomePage() {
                   );
                 })}
             </select>
-            <div>
-              <h2 className="scoreboard__score">{totalAwayScore}</h2>
-              <h3>Away</h3>
-            </div>
           </div>
           <div>
+            <div>
+              <h2 className="scoreboard__score">{totalHomeScore}</h2>
+              <h3>Home</h3>
+            </div>
             <select
+              className="scoreboard__select"
               value={homeTeam}
               onChange={(e) => setHomeTeam(e.target.value)}
             >
@@ -119,25 +128,24 @@ function HomePage() {
                   </option>
                 ))}
             </select>
-
-            <div>
-              <h2 className="scoreboard__score">{totalHomeScore}</h2>
-              <h3>Home</h3>
-            </div>
           </div>
         </div>
-        <div>
+        <section className="inning-section">
           <p className="inning-header">Innings</p>
-          {inningScores.map((inning, index) => (
-            <InningCard
-              key={index}
-              inning={inning}
-              index={index}
-              handleScoreChange={handleScoreChange}
-            />
-          ))}
-        </div>
-        <div className="btn-container">
+          <div>
+            <div className="inning-container">
+              {inningScores.map((inning, index) => (
+                <InningCard
+                  key={index}
+                  inning={inning}
+                  index={index}
+                  handleScoreChange={handleScoreChange}
+                />
+              ))}
+            </div>
+          </div>
+        </section>
+        <div className="btn__container">
           <button className="btn btn__add-inning" onClick={handleAddInning}>
             Add Inning
           </button>

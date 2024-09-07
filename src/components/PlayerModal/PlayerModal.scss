@@ -1,3 +1,7 @@
+form {
+  font-size: 13px;
+}
+
 .modal {
   position: fixed;
   top: 0;
@@ -9,6 +13,10 @@
   align-items: center;
   justify-content: center;
 
+  &__header {
+    padding-bottom: 1rem;
+  }
+
   &__container {
     background: white;
     padding: 2rem;
@@ -19,10 +27,36 @@
 
   &__input {
     margin-bottom: 1rem;
+    &--jersey {
+      width: 3rem;
+    }
+  }
+
+  &__input-label {
+    font-weight: 600;
+    &--name,
+    &--jersey,
+    &--team {
+      padding-right: 0.5rem;
+    }
+  }
+
+  &__input-field--radio {
+    margin: 0 0.25rem 0 0.5rem;
   }
 
   &__button-container {
     display: flex;
     justify-content: space-between;
+  }
+
+  &__button {
+    border-radius: 999px;
+    border: none;
+    padding: 0.5rem 0.75rem;
+    &--create {
+      background: #5e5df0;
+      color: #ffffff;
+    }
   }
 }

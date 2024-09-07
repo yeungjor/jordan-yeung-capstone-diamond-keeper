@@ -1,6 +1,12 @@
 .home {
   &__header {
+    font-size: 28px;
     padding: 1rem 0;
+  }
+  &__date {
+    border-radius: 999px;
+    border: 2px solid #5e5df0;
+    padding: 0.25rem 0.5rem;
   }
 }
 
@@ -9,23 +15,52 @@
   justify-content: space-evenly;
   padding: 1rem 0;
   &__score {
-    padding: 1rem 0;
-    font-size: 28px;
+    padding: 0.5rem 0;
+    font-size: 40px;
+  }
+  &__select {
+    padding: 0.25rem 0.5rem;
+    margin-top: 0.75rem;
+    border-radius: 999px;
+    border: 2px solid #5e5df0;
+    padding: 0.25rem 0.5rem;
   }
 }
 
+.inning-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .inning-header {
+  font-size: 18px;
   padding-bottom: 1rem;
 }
 
-.btn-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 1rem;
-}
-
 .btn {
+  border-radius: 999px;
+  border: none;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  padding: 0.5rem 0.75rem;
+  width: 9rem;
   margin-bottom: 1rem;
-  width: 8rem;
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  &__add-inning {
+    color: #ffffff;
+    background: #5e5df0;
+  }
+
+  &__submit {
+    background: #14aa51;
+  }
 }

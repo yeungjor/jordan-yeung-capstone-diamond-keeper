@@ -13,9 +13,21 @@
     text-align: left;
   }
   &__gender,
-  &__bats,
   &__throws {
     width: 15%;
     text-align: left;
+  }
+  &__bats {
+    width: 2.75rem;
+    text-align: left;
+  }
+}
+
+.btn {
+  &__delete-player {
+    border: none;
+  }
+  &__delete-img {
+    width: 1rem;
   }
 }

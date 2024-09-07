@@ -17,6 +17,7 @@ function InningCard({ inning, index, handleScoreChange }) {
             type="number"
             value={inning.away}
             placeholder="Away Score"
+            readOnly
           />
           <button
             className="score__button"
@@ -38,6 +39,7 @@ function InningCard({ inning, index, handleScoreChange }) {
             type="number"
             value={inning.home}
             placeholder="Home Score"
+            readOnly
           />
           <button
             className="score__button"
